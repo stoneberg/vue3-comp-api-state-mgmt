@@ -1,4 +1,4 @@
-# composition-api-state-manager
+# vue3-composition-api-state-management
 
 ## Project setup
 ```
