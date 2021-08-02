@@ -1,6 +1,6 @@
 import { reactive, readonly, computed } from "vue";
 import useUserStore from "@/store/useUserStore";
-import { fetchMovies } from "@/services/movieApi";
+import movieService from "@/services/movieService";
 
 const defaultState = {
   movies: [],
@@ -28,7 +28,7 @@ const getters = {
 const actions = {
   async findMovies() {
     try {
-      const response = await fetchMovies();
+      const response = await movieService.fetchMovies();
       console.log("response>>>", response);
       state.movies = [].concat(response.data.movies);
       return response;

@@ -1,5 +1,5 @@
 import { reactive, readonly, computed, watch } from "vue";
-import { signin } from "@/services/loginApi";
+import loginService from "@/services/loginService";
 
 const STATE_NAME = "userState";
 
@@ -35,7 +35,7 @@ const getters = {
 const actions = {
   async login() {
     try {
-      const response = await signin();
+      const response = await loginService.signin();
       console.log("response>>>", response);
       actions.updateUserData(response);
       return response;
